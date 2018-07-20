@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd ~
-sudo mkdir home/jtarchalski/keebs/
+sudo mkdir ~/keebs/
 cd ~/keebs/
 git clone https://github.com/h34d3r/qmk_firmware.git
 cd qmk_firmware
@@ -10,7 +10,7 @@ git submodule sync --recursive && git submodule update --init --recursive
 yes | sudo pacman -Syu
 cd ~/keebs/
 git clone https://github.com/PaulStoffregen/teensy_loader_cli.git
-cd teensy_loadr_cli
+cd ~/keebs/teensy_loader_cli
 make
 yes | sudo pacman -Syu
 cd ~
