@@ -8,12 +8,12 @@ should only have to enter sudo password once, unless downloads take longer than 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 .bashrc:
-bashrc file with some aliases that are useull
+bashrc file with some aliases that are useful
 
 ll = ls -l
 
 la = ls -al
 
-teensy_3.2_load = sudo ~/keebs/teensy_loader_cli/teensy_loader_cli -mmcu=mk20dx256 -wv		#this is added when running qmk_setup.sh
+teensy_3.2_load = sudo ~/keebs/teensy_loader_cli/teensy_loader_cli -mmcu=mk20dx256 -wv                this is added when running qmk_setup.sh
 
 
