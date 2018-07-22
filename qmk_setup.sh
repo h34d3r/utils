@@ -13,6 +13,10 @@ git clone https://github.com/PaulStoffregen/teensy_loader_cli.git
 cd ~/keebs/teensy_loader_cli
 make
 yes | sudo pacman -Syu
+
 cd ~
-echo "alias 'teensy_3.2_load'='sudo ~/keebs/teensy_loader_cli/teensy_loader_cli -mmcu=mk20dx256 -wv'" >> .bashrc
+teensy_3_2=$(cat .bashrc | grep "teensy_3.2_load")
+if [ "$teensy_3_2" != "alias 'teensy_3.2_load'='sudo ~/keebs/teensy_loader_cli/teensy_loader_cli -mmcu=mk20dx256 -wv'" ]; then
+	echo "alias 'teensy_3.2_load'='sudo ~/keebs/teensy_loader_cli/teensy_loader_cli -mmcu=mk20dx256 -wv'" >> .bashrc
+fi
 source .bashrc
