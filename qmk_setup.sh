@@ -5,14 +5,12 @@ cd ~/keebs/
 git clone https://github.com/h34d3r/qmk_firmware.git
 cd qmk_firmware
 yes | sudo util/install_dependencies.sh
-yes | sudo pacman -Syu
 git submodule sync --recursive && git submodule update --init --recursive
-yes | sudo pacman -Syu
+sudo pacman -Sy base-devel unzip wget dfu-util zip gcc binutils git --noconfirm
 cd ~/keebs/
 git clone https://github.com/PaulStoffregen/teensy_loader_cli.git
 cd ~/keebs/teensy_loader_cli
 make
-yes | sudo pacman -Syu
 
 cd ~
 teensy_3_2=$(cat .bashrc | grep "teensy_3.2_load")
