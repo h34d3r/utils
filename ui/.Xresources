@@ -36,7 +36,7 @@ urxvt*shading: 30
 ! Use a decent font
 xterm*faceName:DejaVu Sans Mono
 xterm*faceSize:11
-urxvt.font:xft:Hack Regular:pixelsize=14
+URxvt.font:xft:Hack:pixelsize=14
 
 ! xterm
 xterm*foreground:#F8F8F8
@@ -112,4 +112,3 @@ URxvt*color12: rgb:7272/9f9f/cfcf
 URxvt*color13: rgb:adad/7f7f/a8a8
 URxvt*color14: rgb:3434/e2e2/e2e2
 URxvt*color15: rgb:eeee/eeee/ecec
-
