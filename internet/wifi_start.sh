@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo killall wpa_supplicant
 sudo killall dhcpcd
-LIST=$(cat ~/utils/internet/NAMELIST)
+LIST=$(cat ~/utils/internet/NETWORK_LIST)
 echo "choose wifi network"
 echo "options:"
 echo "$LIST"
