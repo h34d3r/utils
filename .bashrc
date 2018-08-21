@@ -20,5 +20,5 @@ alias 'wifiadd'='~/utils/internet/wifi_add.sh'
 alias 'wifistop'='~/utils/internet/wifi_stop.sh'
 
 # GUI
-alias 'wmstart'='~/utils/start-ui.sh'
+alias 'wmstart'='~/utils/ui/start-ui.sh'
 alias 'wmstop'='killall Xorg'
