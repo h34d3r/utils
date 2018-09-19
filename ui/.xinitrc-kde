@@ -1,0 +1,3 @@
+xrdb ~/.Xresources
+feh --bg-scale ~/wallpaper.png
+exec startkde
