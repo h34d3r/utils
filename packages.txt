@@ -8,12 +8,8 @@ automake
 avr-binutils
 avr-gcc
 avr-libc
-bash
-binutils
-bison
 bluez
 bzip2
-coreutils
 cryptsetup
 cvs
 device-mapper
@@ -22,7 +18,6 @@ dfu-util
 dhcpcd
 diffutils
 discord
-dmenu
 e2fsprogs
 ecryptfs-utils
 exo
@@ -98,7 +93,6 @@ pciutils
 perl
 pkgconf
 plover-git
-polybar-git
 procps-ng
 psmisc
 pulseaudio

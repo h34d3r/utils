@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd ~
-sudo mkdir ~/keebs/
+mkdir ~/keebs/
 cd ~/keebs/
 git clone https://github.com/h34d3r/qmk_firmware.git
 cd qmk_firmware
