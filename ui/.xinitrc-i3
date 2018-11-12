@@ -1,6 +1,7 @@
+xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrdb ~/.Xresources
 feh --bg-scale ~/wallpaper.png
-setxkbmap us
+setxkbmap gb
 i3
 exec discord
 exec steam

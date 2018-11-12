@@ -24,14 +24,14 @@ XTerm*utf8: 1
 
 ! UXrvt
 urxvt.scrollBar:false
-urxvt.visualBell:true
+urxvt.visualBell:false
 urxvt.sessionMgt:false
 urxvt.urlLauncher:firefox
 urxvt*depth: 32
 urxvt*foreground:#F8F8F8
 urxvt*background: rgba:0000/0000/0200/c800
-urxvt*transparent: true
-urxvt*shading: 30
+! urxvt*transparent: true
+! urxvt*shading: 30
 
 ! Use a decent font
 xterm*faceName:DejaVu Sans Mono

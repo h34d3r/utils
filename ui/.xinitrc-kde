@@ -1,3 +1,4 @@
+xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrdb ~/.Xresources
-feh --bg-scale ~/wallpaper.png
 exec startkde
+feh --bg-scale ~/wallpaper.png

@@ -12,8 +12,8 @@
 #modifier = Alt
 set $mod Mod1
 
-#super = windows
-set $sup = Mod4
+# super = windows
+# set $sup = Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,7 +30,7 @@ font pango:System San Francisco Display 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-bindsym $mod+b exec firefox
+bindsym $mod+v exec firefox
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -42,17 +42,18 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "rofi -show run"
+bindsym $mod+s exec "rofi -show run"
+bindsym $mod+Shift+s exec "rofi -show window"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+n focus left
+bindsym $mod+e focus down
+bindsym $mod+i focus up
+bindsym $mod+o focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -61,10 +62,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+o move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -73,18 +74,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+k split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+d split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+t fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+r layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+f layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -125,9 +126,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -137,10 +138,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym n resize shrink width 10 px or 10 ppt
+        bindsym e resize grow height 10 px or 10 ppt
+        bindsym i resize shrink height 10 px or 10 ppt
+        bindsym o resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -154,7 +155,7 @@ mode "resize" {
 }
 
 # resize mode
-bindsym $mod+r mode "resize"
+bindsym $mod+p mode "resize"
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #23262b
@@ -199,7 +200,30 @@ exec_always compton -f
 exec_always "feh --bg-scale $(shuf -n 1 /home/adam/.config/i3/wallpapers.txt)"
 
 # Ensure void loads with GB keymap.
-exec "setxkbmap gb"
+#exec "setxkbmap gb"
+
+# Starting things with i3
+# exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
+for_window [class="yakuake"] floating enable
+exec --no-startup-id feh --bg-scale ~/wallpaper.png
+
+## Plasma Integration
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+## Av
+for_window [window_role="pop-up"] floating enable  
+for_window [window_role="task_dialog"] floating enable  
+for_window [title="Preferences$"] floating enable  
+for_window [title="Install user style"] floating enable  
+for_window [title="KCalc"] floating enable  
+for_window [class="plasmashell"] floating enable  
+for_window [window_role="pop-up"] floating enable  
+for_window [window_role="task_dialog"] floating enable  
+for_window [window_type="dialog"] floating enable  
+for_window [window_type="menu"] floating enable  
+exec --no-startup-id pkill kwin
 
 # MEDIA KEYS #
 
